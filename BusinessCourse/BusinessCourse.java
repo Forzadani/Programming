@@ -46,7 +46,7 @@ public class BusinessCourse extends Course{
     
     /**
      * This method set the name of course.
-     * @param name is the name of the Course.
+     * @param name is the name of the BusinessCourse.
      */
     public void setName(String name){
         if(name.length()>=4){
@@ -67,7 +67,7 @@ public class BusinessCourse extends Course{
     
     /**
      * This method set the ID of the course.
-     * @param id  is the ID of the Course.
+     * @param id  is the ID of the BusinessCourse.
      */
     public void setId(String id){
         if(id.startsWith(name.substring(0, 1)) && id.endsWith(teacher.substring(0, 1))){
@@ -77,7 +77,7 @@ public class BusinessCourse extends Course{
     
     /**
      * This method set the duration of the course.
-     * @param duration is the duration of the Course.
+     * @param duration is the duration of the BusinessCourse.
      */
     public void setDuration(int duration){
         if(duration >= 30){
@@ -129,8 +129,8 @@ public class BusinessCourse extends Course{
      * This method clone the object Course.
      * @return an Course object.
      */
-    public Course clone(){
-        Course otro = new Course();
+    public BusinessCourse clone(){
+        BusinessCourse otro = new BusinessCourse();
         otro.setName(this.name);
         otro.setTeacher(this.teacher);
         otro.setId(id);
@@ -140,10 +140,10 @@ public class BusinessCourse extends Course{
     
     /**
      * This method compare two objects.
-     * @param otro is the name of the course object.
+     * @param otro is the name of the BusinessCourse object.
      * @return a Boolean.
      */
-    public boolean equals(Course otro){
+    public boolean equals(BusinessCourse otro){
         if(otro == this){
             return true;
         }
