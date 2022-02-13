@@ -1,5 +1,8 @@
 package Task_4;
 
+import java.util.HashSet;
+import java.util.Set;
+
 /**
  *
  * @author dani
@@ -7,7 +10,42 @@ package Task_4;
 public class Course {
     protected String name, id, teacher;
     protected int duration;
-        
+    
+    /**
+     * This is the constructor by default.
+     */
+    public Course(){
+        name = "";
+        id = "";
+        teacher = "";
+        duration = 0;
+    }
+    
+    /**
+     * This is the constructor with parameters.
+     * @param name is the name of the course.
+     * @param teacher is the name of the teacher.
+     * @param id is the identification of the course.
+     * @param duration is the duration of the course.
+     */
+    public Course(String name, String id, String teacher, int duration){
+        this.setName(name);
+        this.setTeacher(teacher);
+        this.setId(id);
+        this.setDuration(duration);
+    }
+    
+    /**
+     * This is a copy constructor.
+     * @param copy is the object name.
+     */
+    public Course(Course copy){
+        copy.name = this.name;
+        copy.teacher = this.teacher;
+        copy.id = this.id;
+        copy.duration = this.duration;
+    }
+    
     /**
      * This method set the name of course.
      * @param name is the name of the Course.
@@ -23,7 +61,8 @@ public class Course {
      * @param teacher is the name of the Teacher.
      */
     public void setTeacher(String teacher){
-        if(teacher.contentEquals(",")){
+        String nombre = teacher.substring(teacher.indexOf(",")+1);
+        if(teacher.contentEquals(",") && !nombre.contentEquals(" ")){
             this.teacher = teacher;
         }
     }
