@@ -42,6 +42,7 @@ public class BusinessCourse extends Course{
         copy.teacher = this.teacher;
         copy.id = this.id;
         copy.duration = this.duration;
+        otro.internship = this.internship;
     }
     
     /**
@@ -135,6 +136,7 @@ public class BusinessCourse extends Course{
         otro.setTeacher(this.teacher);
         otro.setId(id);
         otro.setDuration(duration);
+        otro.internship = this.internship;
         return otro;
     }
     
